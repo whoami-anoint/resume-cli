@@ -1,3 +1,4 @@
+mod blogs;
 mod experience;
 mod contact;
 mod skills;
@@ -8,13 +9,16 @@ use colored::Colorize;
 use contact::show_contact;
 use skills::show_skills;
 use experience::show_experience;
+// use blogs::show_blogs;
 
 fn main() {
     println!("");
     println!("");
-    println!("Hey there! I'm {}, a full stack web3 developer and currently learning new technologies.","Karan Pargal".bold().bright_yellow());
+    println!("Hey there! I'm {},
+     {} | {} | {} | {}
+     Always exploring with tech..","Abhishek Kafle".bold().bright_yellow(),"Infosec Poet".bold().bright_red(),"Developer".bold().bright_green(),"Alpha Geek".bold().bright_purple(),"DevOps Engineer".bold().yellow());
 
-    let options = vec!["About","Experience","Skills","Contact","Exit"];
+    let options = vec!["Intro","Skills","Blogs","Poems","Contact","Exit"];
 
     loop{
         let choice = Select::new("What would you like to know?", options.clone()).prompt();
@@ -23,17 +27,27 @@ fn main() {
             Ok(choice) => {
                 if choice == options[0] {
                     println!("");
-                    println!("I am a proficient and driven {} with extensive experience in emerging technologies.","full-stack developer".bold().bright_yellow());
-                    println!("I possess diverse technical skills, including proficiency in programming languages such as {}.","C++, Python, JavaScript, Solidity, Rust, and more".bold().bright_yellow());
-                    println!("With practical knowledge in {} I have the capacity to tackle complex projects in the tech industry.","blockchain, web3, and machine learning.".bold().bright_yellow());
+                    println!("🔧💻 I'm a {}, always exploring with tech.","DevOps Engineer".bold().bright_yellow());
                     println!("");
-                    println!("I have honed my technical skills through {} at multiple companies, and {} and am excited to continue building my skills and contributing to {} in the tech industry.","internships".bold().bright_yellow(),"online courses".bold().bright_yellow(),"innovative projects".bold().bright_yellow());
-                    println!("Along with my technical expertise, I possess strong soft skills such as {}. I am a team player and enjoy collaborating with others to achieve common goals.","communication, critical thinking, and problem-solving".bold().bright_yellow());
-                    println!("Furthermore, I have demonstrated natural leadership skills through various group projects.");
+                    println!("🚀🛡️ On a mission to excel in { }.","DevSecOps".bold().bright_yellow());
+                    println!("");
+                    println!("🔒🤖 Passionate about {} and {}.","cybersecurity".bold().bright_yellow(),"automation".bold().bright_yellow());
+                    println!("");
+                    println!("🕵️‍♂️🔨 Eager to tackle exciting projects, like {}.","security tests and tool development".bold().bright_yellow());
+                    println!("");
+                    println!("💻🚀 Digging into {}.","coding, deployment,and problem solving".bold().bright_yellow());
+                    println!("");
+                    println!("🎮🌐 Even my free time is a playground for {}.","infosec and infotech".bold().bright_yellow());
+                    println!("");
+                    println!("✍️📚 Proudly an {}, I write poems on tech and cybersecurity.","Infosec Poet".bold().bright_yellow());
+                    println!("");
+                    println!("🌟 I am constantly working to improve myself and my skills, always pushing to {}.","dream,dare and do".bold().bright_yellow());
+                    println!("");
+                    println!("🚀🛡️👾 Let's {} cool tech stuff together!","team up,learn and create".bold().bright_yellow());
                     println!("");
                 }
                 else if choice == options[1] {
-                    let file_path = "./data/experience/experience.json".to_owned();
+                    let file_path = "./data/experience/skills.json".to_owned();
                     let contents = fs::read_to_string(file_path).expect("Couldn't find or load that file.");
                     let res = show_experience(&contents);
                     match res {
@@ -51,9 +65,18 @@ fn main() {
                     }
                 }
                 else if choice == options[3] {
-                    show_contact();
+                    let file_path = "./data/blogs/blogs.json".to_owned();
+                    let contents = fs::read_to_string(file_path).expect("Couldn't find or load that file.");
+                    let res = show_skills(&contents);
+                    match res {
+                        Ok(_res) => println!(""),
+                        Err(_) => println!("Error in experience.rs"),
+                    }
                 }
                 else if choice == options[4] {
+                    show_contact();
+                }
+                else if choice == options[6] {
                     println!("Bye! Have a great day!");
                     break;
                 }

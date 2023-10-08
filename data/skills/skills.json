@@ -1,6 +1,9 @@
 {
-    "Web Technologies": "HTML, CSS, React.js, Node.js, Express.js, MongoDB, Django, ether.js, web3.js",
-    "Languages": "Python, Solidity, Javascript, Typescript, Rust, C, C++, SQL",
-    "AI/ML": "Tensorflow, PyTorch, Scikit-learn, Pandas, Numpy, NLP, CV",
-    "DevOps": "AWS, GCP, Docker"
+    "Web Technologies": "HTML, CSS, Tailwind CSS, Node.js, MongoDB, Django, Actix", 
+    "Hosting": "Versal, Ngnix, Apache, Render",
+    "Server":"Windows Server 2019, Ubuntu Server",
+    "Languages": "Python, Javascript, Golang, Rust, Bash, SQL",
+    "AI/ML": "Jupyter-Notebook, Pandas, Numpy,Google Colab, Hadoop",
+    "Pentesting":"Nmap, cURL, Metasploit, Sqlmap, Wireshark, Burpsuite",
+    "DevOps": "Git, AWS, Docker, Ansible, Chef, Terraform, Kubernetes"
 }
