@@ -1,5 +1,5 @@
 mod blogs;
-mod experience;
+// mod experience;
 mod contact;
 mod skills;
 
@@ -8,8 +8,8 @@ use std::fs;
 use colored::Colorize;
 use contact::show_contact;
 use skills::show_skills;
-use experience::show_experience;
-// use blogs::show_blogs;
+// use experience::show_experience;
+use blogs::show_blogs;
 
 fn main() {
     println!("");
@@ -47,15 +47,6 @@ fn main() {
                     println!("");
                 }
                 else if choice == options[1] {
-                    let file_path = "./data/experience/skills.json".to_owned();
-                    let contents = fs::read_to_string(file_path).expect("Couldn't find or load that file.");
-                    let res = show_experience(&contents);
-                    match res {
-                        Ok(_res) => println!(""),
-                        Err(_) => println!("Error in experience.rs"),
-                    }
-                }
-                else if choice == options[2] {
                     let file_path = "./data/skills/skills.json".to_owned();
                     let contents = fs::read_to_string(file_path).expect("Couldn't find or load that file.");
                     let res = show_skills(&contents);
@@ -64,7 +55,16 @@ fn main() {
                         Err(_) => println!("Error in experience.rs"),
                     }
                 }
-                else if choice == options[3] {
+                else if choice == options[2] {
+                    let file_path = "./data/blogs/blogs.json".to_owned();
+                    let contents = fs::read_to_string(file_path).expect("Couldn't find or load that file.");
+                    let res = show_blogs(&contents);
+                    match res {
+                        Ok(_res) => println!(""),
+                        Err(_) => println!("Error in experience.rs"),
+                    }
+                }
+                else if choice == options[5] {
                     let file_path = "./data/blogs/blogs.json".to_owned();
                     let contents = fs::read_to_string(file_path).expect("Couldn't find or load that file.");
                     let res = show_skills(&contents);
