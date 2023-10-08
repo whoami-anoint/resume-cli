@@ -3,7 +3,7 @@
     "Hosting": "Versal, Ngnix, Apache, Render",
     "Server":"Windows Server 2019, Ubuntu Server",
     "Languages": "Python, Javascript, Golang, Rust, Bash, SQL",
-    "AI/ML": "Jupyter-Notebook, Pandas, Numpy,Google Colab, Hadoop",
+    "AI/ML": "Jupyter-Notebook, Pandas, Numpy, Google Colab, Hadoop",
     "Pentesting":"Nmap, cURL, Metasploit, Sqlmap, Wireshark, Burpsuite",
     "DevOps": "Git, AWS, Docker, Ansible, Chef, Terraform, Kubernetes"
 }
