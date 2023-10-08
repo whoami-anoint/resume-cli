@@ -1,15 +1,15 @@
 mod blogs;
-// mod experience;
 mod contact;
 mod skills;
+mod poems;
 
 use inquire::Select;
 use std::fs;
 use colored::Colorize;
 use contact::show_contact;
 use skills::show_skills;
-// use experience::show_experience;
 use blogs::show_blogs;
+use poems :: show_poems;
 
 fn main() {
     println!("");
@@ -18,7 +18,7 @@ fn main() {
      {} | {} | {} | {}
      Always exploring with tech..","Abhishek Kafle".bold().bright_yellow(),"Infosec Poet".bold().bright_red(),"Developer".bold().bright_green(),"Alpha Geek".bold().bright_purple(),"DevOps Engineer".bold().yellow());
 
-    let options = vec!["Intro","Skills","Blogs","Poems","Contact","Exit"];
+    let options = vec!["Intro","Skills","Blogs","Poems","Projects","Contact","Exit"];
 
     loop{
         let choice = Select::new("What would you like to know?", options.clone()).prompt();
@@ -52,7 +52,7 @@ fn main() {
                     let res = show_skills(&contents);
                     match res {
                         Ok(_res) => println!(""),
-                        Err(_) => println!("Error in experience.rs"),
+                        Err(_) => println!("Error in skills.rs"),
                     }
                 }
                 else if choice == options[2] {
@@ -61,22 +61,16 @@ fn main() {
                     let res = show_blogs(&contents);
                     match res {
                         Ok(_res) => println!(""),
-                        Err(_) => println!("Error in experience.rs"),
+                        Err(_) => println!("Error in blogs.rs"),
                     }
                 }
-                else if choice == options[5] {
-                    let file_path = "./data/blogs/blogs.json".to_owned();
-                    let contents = fs::read_to_string(file_path).expect("Couldn't find or load that file.");
-                    let res = show_skills(&contents);
-                    match res {
-                        Ok(_res) => println!(""),
-                        Err(_) => println!("Error in experience.rs"),
-                    }
+                else if choice == options[3] {
+                    show_poems();
                 }
                 else if choice == options[4] {
                     show_contact();
                 }
-                else if choice == options[6] {
+                else if choice == options[5] {
                     println!("Bye! Have a great day!");
                     break;
                 }
