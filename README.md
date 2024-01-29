@@ -13,7 +13,7 @@ To install and use the portfolio, you need to have Rust programming language ins
 
 Once Rust is installed, you can clone this repository:
 ```
-git clone https://github.com/your-username/rust-cli-portfolio.git
+git clone https://github.com/whoami-anoint/rust-cli-portfolio.git
 ```
 
 Build the project:
